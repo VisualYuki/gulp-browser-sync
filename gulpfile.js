@@ -2,7 +2,6 @@ const gulp = require("gulp");
 const autoprefixer = require("gulp-autoprefixer");
 const less = require("gulp-less");
 const sourcemaps = require("gulp-sourcemaps");
-const shorthand = require("gulp-shorthand");
 const cleanCSS = require("gulp-clean-css");
 const rename = require("gulp-rename");
 const plumber = require("gulp-plumber");
@@ -28,7 +27,6 @@ function style () {
       .pipe(gulpif(srcMap, sourcemaps.init()))
       .pipe(less())
       .pipe(gulpif(isProd, autoprefixer()))
-      .pipe(gulpif(isProd, shorthand()))
       .pipe(
          gulpif(
             isProd,
